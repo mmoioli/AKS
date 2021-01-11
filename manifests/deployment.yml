@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mmoioliaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mmoioliaks
+  template:
+    metadata:
+      labels:
+        app: mmoioliaks 
+    spec:
+      containers:
+        - name: mmoioliaks 
+          image: aksregistrymmoioli.azurecr.io/mmoioliaks
+          ports:
+          - containerPort: 8080
